@@ -16,7 +16,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:run": "vitest run",
-    "test:browser": "npx vitest --browser",
+    "test:browser": "npx vitest --browser -c vitest.config.browser.ts",
     "coverage": "vitest run --coverage"
   },
   "keywords": [],

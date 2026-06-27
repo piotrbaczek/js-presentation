@@ -33,6 +33,6 @@ describe('it should process everything correctly', () => {
         const result = grader.grade();
         expect(result.studentName).equal('John Doe');
         expect(result.total).equal(360);
-        expect(result.average).equal("90.00");
+        expect(result.average).equal(90);
     });
 });
