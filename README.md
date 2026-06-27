@@ -1,0 +1,1 @@
+![alt text](https://github.com/piotrbaczek/js-presentation/blob/master/image.jpg?raw=true)
