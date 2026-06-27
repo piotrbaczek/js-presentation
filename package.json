@@ -1,19 +1,26 @@
 {
   "name": "js-presentation",
   "version": "1.0.0",
-  "description": "",
+  "description": "Corporate version of student code",
   "main": "index.js",
   "devDependencies": {
+    "@vitest/browser-playwright": "^4.1.9",
+    "@vitest/coverage-v8": "^4.1.9",
     "typescript": "^6.0.3",
-    "vite": "^8.1.0"
+    "vite": "^8.1.0",
+    "vitest": "^4.1.9"
   },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:browser": "npx vitest --browser -c vitest.config.browser.ts",
+    "coverage": "vitest run --coverage"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Piotr Bączek <pgolasz@gmail.com>",
+  "license": "MIT",
   "type": "commonjs"
 }
