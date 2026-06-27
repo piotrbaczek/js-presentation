@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "devDependencies": {
+    "@vitest/coverage-v8": "^4.1.9",
     "typescript": "^6.0.3",
-    "vite": "^8.1.0"
+    "vite": "^8.1.0",
+    "vitest": "^4.1.9"
   },
   "scripts": {
     "dev": "vite",
