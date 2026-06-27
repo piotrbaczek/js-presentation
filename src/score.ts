@@ -1,7 +1,7 @@
-export class Grade {
+export class Score {
     constructor(
         private _subject: string,
-        private _grade: number
+        private _score: number
     ) {
     }
 
@@ -9,7 +9,7 @@ export class Grade {
         return this._subject;
     }
 
-    get grade(): number {
-        return this._grade;
+    get score(): number {
+        return this._score;
     }
 }
