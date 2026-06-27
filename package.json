@@ -1,7 +1,19 @@
 {
-  "dependencies": {
-    "typescript": "^6.0.3"
+  "name": "js-presentation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vite": "^8.1.0"
   },
-  "type": "module",
-  "exports": "./main.js"
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
 }

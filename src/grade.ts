@@ -1,5 +1,8 @@
 export class Grade {
-    constructor(private _subject: string, private _grade: number) {
+    constructor(
+        private _subject: string,
+        private _grade: number
+    ) {
     }
 
     get subject(): string {

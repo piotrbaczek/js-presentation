@@ -1,4 +1,4 @@
-import { Handler } from './handler.interface';
+import type { Handler } from './handler.interface';
 import { GradesEnum } from '../grades.enum';
 
 export abstract class AbstractHandler implements Handler
