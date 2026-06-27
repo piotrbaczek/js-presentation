@@ -1,12 +1,9 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.GraderResult = void 0;
-const grades_enum_1 = require("./grades.enum");
-class GraderResult {
+import { GradesEnum } from './grades.enum';
+export class GraderResult {
     _studentName = '';
     _total = 0;
     _average = 0;
-    _grade = grades_enum_1.GradesEnum.GRADE_F;
+    _grade = GradesEnum.GRADE_F;
     set studentName(value) {
         this._studentName = value;
     }
@@ -28,5 +25,3 @@ class GraderResult {
         };
     }
 }
-exports.GraderResult = GraderResult;
-//# sourceMappingURL=GraderResult.js.map

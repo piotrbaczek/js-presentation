@@ -1,14 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Grader = void 0;
-const GraderResult_1 = require("./GraderResult");
-const grade_1 = require("./grade");
-const grade_a_handler_1 = require("./handlers/grade-a-handler");
-const grade_b_handler_1 = require("./handlers/grade-b-handler");
-const grade_d_handler_1 = require("./handlers/grade-d-handler");
-const grade_c_handler_1 = require("./handlers/grade-c-handler");
-const grade_a_plus_handler_1 = require("./handlers/grade-a-plus-handler");
-class Grader {
+import { GraderResult } from './grader-result';
+import { Grade } from './grade';
+export class Grader {
     _studentName = '';
     _grades = [];
     handler;
@@ -16,14 +8,14 @@ class Grader {
         this.handler = handler;
     }
     addGrade(subject, grade) {
-        this._grades.push(new grade_1.Grade(subject, grade));
+        this._grades.push(new Grade(subject, grade));
         return this;
     }
     set studentName(value) {
         this._studentName = value;
     }
     grade() {
-        const graderResult = new GraderResult_1.GraderResult();
+        const graderResult = new GraderResult();
         graderResult.studentName = this._studentName;
         const gradesSum = this._grades
             .map((grade) => {
@@ -38,13 +30,22 @@ class Grader {
         return graderResult;
     }
 }
-exports.Grader = Grader;
-const grader = new Grader(new grade_a_plus_handler_1.GradeAPlusHandler().setNext(new grade_a_handler_1.GradeAHandler().setNext(new grade_b_handler_1.GradeBHandler().setNext(new grade_c_handler_1.GradeCHandler().setNext(new grade_d_handler_1.GradeDHandler())))));
-grader.studentName = 'JohnDoe';
-grader.addGrade('math', 95);
-grader.addGrade('english', 88);
-grader.addGrade('science', 91);
-grader.addGrade('computer_science', 86);
-const graderResult = grader.grade();
-console.log(graderResult.toObject());
-//# sourceMappingURL=grader.js.map
+// const grader = new Grader(
+//     new GradeAPlusHandler().setNext(
+//         new GradeAHandler().setNext(
+//             new GradeBHandler().setNext(
+//                 new GradeCHandler().setNext(
+//                     new GradeDHandler()
+//                 )
+//             )
+//         )
+//     )
+// );
+// grader.studentName = 'JohnDoe';
+// grader.addGrade('math', 95);
+// grader.addGrade('english', 88);
+// grader.addGrade('science', 91);
+// grader.addGrade('computer_science', 86);
+//
+// const graderResult = grader.grade();
+// console.log(graderResult.toObject());

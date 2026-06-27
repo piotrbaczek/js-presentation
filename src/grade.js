@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Grade = void 0;
-class Grade {
+export class Grade {
     _subject;
     _grade;
     constructor(_subject, _grade) {
@@ -15,5 +12,3 @@ class Grade {
         return this._grade;
     }
 }
-exports.Grade = Grade;
-//# sourceMappingURL=grade.js.map

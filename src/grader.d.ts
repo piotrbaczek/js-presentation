@@ -1,4 +1,4 @@
-import { GraderResult } from './GraderResult';
+import { GraderResult } from './grader-result';
 import { Handler } from './handlers/handler.interface';
 export declare class Grader {
     private _studentName;

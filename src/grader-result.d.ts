@@ -15,4 +15,4 @@ export declare class GraderResult {
         grade: string;
     };
 }
-//# sourceMappingURL=GraderResult.d.ts.map
+//# sourceMappingURL=grader-result.d.ts.map

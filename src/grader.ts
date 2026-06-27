@@ -1,4 +1,4 @@
-import { GraderResult } from './GraderResult';
+import { GraderResult } from './grader-result';
 import { Handler } from './handlers/handler.interface';
 import { Grade } from './grade';
 import {GradeAHandler} from "./handlers/grade-a-handler";
@@ -43,22 +43,22 @@ export class Grader {
     }
 }
 
-const grader = new Grader(
-    new GradeAPlusHandler().setNext(
-        new GradeAHandler().setNext(
-            new GradeBHandler().setNext(
-                new GradeCHandler().setNext(
-                    new GradeDHandler()
-                )
-            )
-        )
-    )
-);
-grader.studentName = 'JohnDoe';
-grader.addGrade('math', 95);
-grader.addGrade('english', 88);
-grader.addGrade('science', 91);
-grader.addGrade('computer_science', 86);
-
-const graderResult = grader.grade();
-console.log(graderResult.toObject());
+// const grader = new Grader(
+//     new GradeAPlusHandler().setNext(
+//         new GradeAHandler().setNext(
+//             new GradeBHandler().setNext(
+//                 new GradeCHandler().setNext(
+//                     new GradeDHandler()
+//                 )
+//             )
+//         )
+//     )
+// );
+// grader.studentName = 'JohnDoe';
+// grader.addGrade('math', 95);
+// grader.addGrade('english', 88);
+// grader.addGrade('science', 91);
+// grader.addGrade('computer_science', 86);
+//
+// const graderResult = grader.grade();
+// console.log(graderResult.toObject());

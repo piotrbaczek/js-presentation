@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "typescript": "*"
-  }
+    "typescript": "^6.0.3"
+  },
+  "type": "module",
+  "exports": "./main.js"
 }
