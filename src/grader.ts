@@ -17,8 +17,10 @@ export class Grader {
         return this;
     }
 
-    set studentName(value: string) {
-        this._studentName = value;
+    public setStudentName(studentName: string): Grader {
+        this._studentName = studentName;
+
+        return this;
     }
 
     public grade(): GraderResult {
