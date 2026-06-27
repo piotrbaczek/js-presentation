@@ -22,12 +22,12 @@ export class GraderResult {
         this._grade = value;
     }
 
-    public toObject(): { student: string, total: number, average: number, grade: string } {
+    public toObject(): { student: string, total: number, average: string, grade: string } {
         return {
             student: this._studentName,
             total: this._total,
-            average: this._average,
-            grade: this._grade?.toString()
+            average: this._average.toFixed(2),
+            grade: this._grade.toString()
         };
     }
 }
