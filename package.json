@@ -4,6 +4,7 @@
   "description": "Corporate version of student code",
   "main": "index.js",
   "devDependencies": {
+    "@vitest/browser-playwright": "^4.1.9",
     "@vitest/coverage-v8": "^4.1.9",
     "typescript": "^6.0.3",
     "vite": "^8.1.0",
@@ -15,6 +16,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:run": "vitest run",
+    "test:browser": "npx vitest --browser",
     "coverage": "vitest run --coverage"
   },
   "keywords": [],

@@ -22,6 +22,22 @@ export class GraderResult {
         this._grade = value;
     }
 
+    get studentName(): string {
+        return this._studentName;
+    }
+
+    get total(): number {
+        return this._total;
+    }
+
+    get average(): number {
+        return this._average;
+    }
+
+    get grade(): GradesEnum {
+        return this._grade;
+    }
+
     public toObject(): { student: string, total: number, average: string, grade: string } {
         return {
             student: this._studentName,
