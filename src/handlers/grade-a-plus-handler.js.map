@@ -1,0 +1,1 @@
+{"version":3,"file":"grade-a-plus-handler.js","sourceRoot":"","sources":["grade-a-plus-handler.ts"],"names":[],"mappings":";;;AAAA,yDAAqD;AACrD,gDAA4C;AAE5C,MAAa,iBAAkB,SAAQ,kCAAe;IAElD,MAAM,CAAC,OAAe;QAClB,IAAI,OAAO,IAAI,EAAE,EAAE,CAAC;YAChB,OAAO,wBAAU,CAAC,YAAY,CAAC;QACnC,CAAC;QAED,OAAO,KAAK,CAAC,MAAM,CAAC,OAAO,CAAC,CAAC;IACjC,CAAC;CACJ;AATD,8CASC"}
