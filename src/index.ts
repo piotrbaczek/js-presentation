@@ -5,23 +5,27 @@ import { GradeBHandler } from './handlers/grade-b-handler';
 import { GradeCHandler } from './handlers/grade-c-handler';
 import { GradeDHandler } from './handlers/grade-d-handler';
 
-const grader = new Grader(
-    new GradeDHandler().setNext(
-        new GradeCHandler().setNext(
-            new GradeBHandler().setNext(
-                new GradeAHandler().setNext(
-                    new GradeAPlusHandler()
-                )
-            )
-        )
-    )
-);
+const handlers = [
+    new GradeAPlusHandler(),
+    new GradeAHandler(),
+    new GradeBHandler(),
+    new GradeCHandler(),
+    new GradeDHandler(),
+];
 
-grader.addGrade('maths', 95);
-grader.addGrade('english', 88);
-grader.addGrade('science', 91);
-grader.addGrade('computerScience', 86);
-grader.studentName = 'John Doe';
+handlers.reduce((current, next) => {
+    current.setNext(next);
+    return next;
+});
+
+const grader = new Grader(handlers[0]);
+
+grader
+    .addGrade('maths', 95)
+    .addGrade('english', 88)
+    .addGrade('science', 91)
+    .addGrade('computerScience', 86)
+    .setStudentName('John Doe');
 
 const result = grader.grade();
 console.log(result.toObject());
