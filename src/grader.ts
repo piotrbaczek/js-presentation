@@ -4,15 +4,15 @@ import { Score } from './score';
 
 export class Grader {
     private _studentName: string = '';
-    private _grades: Score[] = [];
-    private _handler: Handler;
+    private _scores: Score[] = [];
+    private _gradeHandler: Handler;
 
-    public constructor(handler: Handler) {
-        this._handler = handler;
+    public constructor(gradeHandler: Handler) {
+        this._gradeHandler = gradeHandler;
     }
 
-    public addGrade(subject: string, grade: number): Grader {
-        this._grades.push(new Score(subject, grade));
+    public addScore(subject: string, grade: number): Grader {
+        this._scores.push(new Score(subject, grade));
 
         return this;
     }
@@ -29,16 +29,16 @@ export class Grader {
 
         const scoreSum = this.calculateScoreSum();
 
-        const gradeAverage = scoreSum / this._grades.length;
+        const gradeAverage = scoreSum / this._scores.length;
         graderResult.total = scoreSum;
         graderResult.average = gradeAverage;
-        graderResult.grade = this._handler.handle(gradeAverage);
+        graderResult.grade = this._gradeHandler.handle(gradeAverage);
 
         return graderResult;
     }
 
     private calculateScoreSum(): number {
-        return this._grades
+        return this._scores
             .map((score: Score) => {
                 return score.score;
             })

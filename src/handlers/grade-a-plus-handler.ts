@@ -3,11 +3,11 @@ import { GradesEnum } from '../grades.enum';
 
 export class GradeAPlusHandler extends AbstractHandler {
 
-    handle(request: number): GradesEnum {
-        if (request >= 90) {
+    public handle(score: number): GradesEnum {
+        if (score >= 90) {
             return GradesEnum.GRADE_A_PLUS;
         }
 
-        return super.handle(request);
+        return super.handle(score);
     }
 }

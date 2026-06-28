@@ -11,9 +11,9 @@ export abstract class AbstractHandler implements Handler
         return handler;
     }
 
-    public handle(request: number): GradesEnum {
+    public handle(score: number): GradesEnum {
         if (this.nextHandler) {
-            return this.nextHandler.handle(request);
+            return this.nextHandler.handle(score);
         }
 
         return GradesEnum.GRADE_F;

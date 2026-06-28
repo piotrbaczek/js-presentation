@@ -1,7 +1,7 @@
 import { GradesEnum } from '../grades.enum';
 
-export interface Handler<Request = number, Result = GradesEnum> {
-    setNext(handler: Handler<Request, Result>): Handler<Request, Result>;
+export interface Handler<Score = number, Grade = GradesEnum> {
+    setNext(handler: Handler<Score, Grade>): Handler<Score, Grade>;
 
-    handle(request: Request): Result;
+    handle(request: Score): Grade;
 }
