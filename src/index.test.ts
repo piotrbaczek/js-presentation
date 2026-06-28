@@ -1,4 +1,4 @@
-import { describe, expect, test } from 'vitest';
+import { beforeAll, describe, expect, test } from 'vitest';
 import { GradeAPlusHandler } from './handlers/grade-a-plus-handler';
 import { GradeAHandler } from './handlers/grade-a-handler';
 import { GradeBHandler } from './handlers/grade-b-handler';
@@ -7,7 +7,8 @@ import { GradeDHandler } from './handlers/grade-d-handler';
 import { Grader } from './grader';
 
 describe('it should process everything correctly', () => {
-    test('values work for student with 90 score', () => {
+    let grader: Grader;
+    beforeAll(() => {
         const handlers = [
             new GradeAPlusHandler(),
             new GradeAHandler(),
@@ -21,13 +22,14 @@ describe('it should process everything correctly', () => {
             return next;
         });
 
-        const grader = new Grader(handlers[0]);
-
+        grader = new Grader(handlers[0]);
+    });
+    test('values work for student with 90 score', () => {
         grader
-            .addGrade('maths', 95)
-            .addGrade('english', 88)
-            .addGrade('science', 91)
-            .addGrade('computerScience', 86)
+            .addScore('maths', 95)
+            .addScore('english', 88)
+            .addScore('science', 91)
+            .addScore('computerScience', 86)
             .setStudentName('John Doe');
 
         const result = grader.grade();

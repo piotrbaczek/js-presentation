@@ -21,10 +21,10 @@ handlers.reduce((current, next) => {
 const grader = new Grader(handlers[0]);
 
 grader
-    .addGrade('maths', 95)
-    .addGrade('english', 88)
-    .addGrade('science', 91)
-    .addGrade('computerScience', 86)
+    .addScore('maths', 95)
+    .addScore('english', 88)
+    .addScore('science', 91)
+    .addScore('computerScience', 86)
     .setStudentName('John Doe');
 
 const result = grader.grade();
