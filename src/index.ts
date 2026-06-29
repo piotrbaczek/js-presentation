@@ -4,6 +4,9 @@ import { GradeAHandler } from './handlers/grade-a-handler';
 import { GradeBHandler } from './handlers/grade-b-handler';
 import { GradeCHandler } from './handlers/grade-c-handler';
 import { GradeDHandler } from './handlers/grade-d-handler';
+import { GradedStudent } from './grader/graded-student';
+import { Score } from './score';
+import { GraderResultPrinter } from './grader-result-printer';
 
 const handlers = [
     new GradeAPlusHandler(),
@@ -20,12 +23,15 @@ handlers.reduce((current, next) => {
 
 const grader = new Grader(handlers[0]);
 
-grader
-    .addScore('maths', 95)
-    .addScore('english', 88)
-    .addScore('science', 91)
-    .addScore('computerScience', 86)
-    .setStudentName('John Doe');
+const gradedStudent = new GradedStudent(
+    'JohnDoe',
+    [
+        new Score('maths', 95),
+        new Score('english', 88),
+        new Score('science', 91),
+        new Score('computer-science', 86)
+    ]
+);
 
-const result = grader.grade();
-console.log(result.toObject());
+const graderResult = grader.grade(gradedStudent);
+GraderResultPrinter.print(graderResult);

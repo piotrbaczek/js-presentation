@@ -5,6 +5,10 @@ import { GradeBHandler } from './handlers/grade-b-handler';
 import { GradeCHandler } from './handlers/grade-c-handler';
 import { GradeDHandler } from './handlers/grade-d-handler';
 import { Grader } from './grader';
+import {GradedStudent} from "./grader/graded-student";
+import {Score} from "./score";
+import {GraderResultPrinter} from "./grader-result-printer";
+import {GradesEnum} from "./grades.enum";
 
 describe('it should process everything correctly', () => {
     let grader: Grader;
@@ -24,17 +28,21 @@ describe('it should process everything correctly', () => {
 
         grader = new Grader(handlers[0]);
     });
-    test('values work for student with 90 score', () => {
-        grader
-            .addScore('maths', 95)
-            .addScore('english', 88)
-            .addScore('science', 91)
-            .addScore('computerScience', 86)
-            .setStudentName('John Doe');
+    test('values work for student with 90 average score', () => {
+        const gradedStudent = new GradedStudent(
+            'JohnDoe',
+            [
+                new Score('maths', 95),
+                new Score('english', 88),
+                new Score('science', 91),
+                new Score('computer-science', 86)
+            ]
+        );
 
-        const result = grader.grade();
-        expect(result.studentName).equal('John Doe');
-        expect(result.total).equal(360);
-        expect(result.average).equal(90);
+        const graderResult = grader.grade(gradedStudent);
+        expect(graderResult.studentName).equal('John Doe');
+        expect(graderResult.total).equal(360);
+        expect(graderResult.average).equal(90);
+        expect(graderResult.grade).equal(GradesEnum.GRADE_A_PLUS);
     });
 });
