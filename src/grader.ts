@@ -1,44 +1,28 @@
 import { GraderResult } from './grader-result';
 import type { Handler } from './handlers/handler.interface';
 import { Score } from './score';
+import { GradedStudent } from './graded-student';
 
 export class Grader {
-    private _studentName: string = '';
-    private _scores: Score[] = [];
-    private _gradeHandler: Handler;
-
-    public constructor(gradeHandler: Handler) {
-        this._gradeHandler = gradeHandler;
+    public constructor(private gradeHandler: Handler) {
     }
 
-    public addScore(subject: string, grade: number): Grader {
-        this._scores.push(new Score(subject, grade));
-
-        return this;
-    }
-
-    public setStudentName(studentName: string): Grader {
-        this._studentName = studentName;
-
-        return this;
-    }
-
-    public grade(): GraderResult {
+    public grade(gradedStudent: GradedStudent): GraderResult {
         const graderResult = new GraderResult();
-        graderResult.studentName = this._studentName;
+        graderResult.studentName = gradedStudent.name;
 
-        const scoreSum = this.calculateScoreSum();
+        const scoreSum = this.calculateScoreSum(gradedStudent);
 
-        const gradeAverage = scoreSum / this._scores.length;
+        const gradeAverage = scoreSum / gradedStudent.scores.length;
         graderResult.total = scoreSum;
         graderResult.average = gradeAverage;
-        graderResult.grade = this._gradeHandler.handle(gradeAverage);
+        graderResult.grade = this.gradeHandler.handle(gradeAverage);
 
         return graderResult;
     }
 
-    private calculateScoreSum(): number {
-        return this._scores
+    private calculateScoreSum(gradedStudent: GradedStudent): number {
+        return gradedStudent.scores
             .map((score: Score) => {
                 return score.score;
             })
