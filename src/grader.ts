@@ -1,7 +1,7 @@
 import { GraderResult } from './grader-result';
 import type { Handler } from './handlers/handler.interface';
 import { Score } from './score';
-import { GradedStudent } from './grader/graded-student';
+import { GradedStudent } from './graded-student';
 
 export class Grader {
     public constructor(private gradeHandler: Handler) {

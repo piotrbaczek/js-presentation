@@ -1,4 +1,4 @@
-import { Score } from '../score';
+import { Score } from './score';
 
 export class GradedStudent {
     public constructor(private _name: string, private _scores: Score[]) {

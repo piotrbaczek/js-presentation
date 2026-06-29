@@ -5,10 +5,9 @@ import { GradeBHandler } from './handlers/grade-b-handler';
 import { GradeCHandler } from './handlers/grade-c-handler';
 import { GradeDHandler } from './handlers/grade-d-handler';
 import { Grader } from './grader';
-import {GradedStudent} from "./grader/graded-student";
-import {Score} from "./score";
-import {GraderResultPrinter} from "./grader-result-printer";
-import {GradesEnum} from "./grades.enum";
+import { GradedStudent } from './graded-student';
+import { Score } from './score';
+import { GradesEnum } from './grades.enum';
 
 describe('it should process everything correctly', () => {
     let grader: Grader;

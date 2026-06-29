@@ -4,7 +4,7 @@ import { GradeAHandler } from './handlers/grade-a-handler';
 import { GradeBHandler } from './handlers/grade-b-handler';
 import { GradeCHandler } from './handlers/grade-c-handler';
 import { GradeDHandler } from './handlers/grade-d-handler';
-import { GradedStudent } from './grader/graded-student';
+import { GradedStudent } from './graded-student';
 import { Score } from './score';
 import { GraderResultPrinter } from './grader-result-printer';
 
