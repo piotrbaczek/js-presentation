@@ -24,7 +24,7 @@ handlers.reduce((current, next) => {
 const grader = new Grader(handlers[0]);
 
 const gradedStudent = new GradedStudent(
-    'JohnDoe',
+    'John Doe',
     [
         new Score('maths', 95),
         new Score('english', 88),
